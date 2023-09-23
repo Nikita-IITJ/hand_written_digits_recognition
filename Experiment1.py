@@ -39,6 +39,14 @@ from utils import preprocess_data,split_data,train_model,split_train_dev_test,pr
 # 1. Get the dataset
 digits = datasets.load_digits()
 
+# 2.1. Print the number of total samples in the dataset (train + test + dev)
+total_samples = len(digits.images)
+print(f"Total number of samples in the dataset: {total_samples}")
+
+# 2.2. Print the size (height and width) of the images in the dataset
+image_shape = digits.images[0].shape
+print(f"Size (height and width) of the images in dataset: {image_shape[0]} x {image_shape[1]}")
+
 # 2. Qualitative sanity check of the data
 _, axes = plt.subplots(nrows=1, ncols=4, figsize=(10, 3))
 for ax, image, label in zip(axes, digits.images, digits.target):
@@ -64,6 +72,7 @@ for ax, image, label in zip(axes, digits.images, digits.target):
 
 # 3. Data splitting -- to create train, dev, and test sets
 data = digits.images
+import ipdb; ipdb.set_trace()
 X_train, X_dev, X_test, y_train, y_dev, y_test = split_train_dev_test(data, digits.target, test_size=0.3, dev_size=0.25)
 
 # 4. Data preprocessing

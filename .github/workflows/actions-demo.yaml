@@ -20,6 +20,9 @@ jobs:
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - name: Install dep
         run:  pip3 install --no-cache-dir -r requirements.txt
+      - name: run shape prints
+        run: echo "💡 The ${{ github.repository }} is updated and printing shapes."
       - name: Run test cases
         run:
           python hyper_params_tuning.py
+          python dummy.py
