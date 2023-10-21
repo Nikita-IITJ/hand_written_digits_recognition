@@ -72,7 +72,7 @@ for ax, image, label in zip(axes, digits.images, digits.target):
 
 # 3. Data splitting -- to create train, dev, and test sets
 data = digits.images
-import ipdb; ipdb.set_trace()
+# import ipdb; ipdb.set_trace()
 X_train, X_dev, X_test, y_train, y_dev, y_test = split_train_dev_test(data, digits.target, test_size=0.3, dev_size=0.25)
 
 # 4. Data preprocessing
