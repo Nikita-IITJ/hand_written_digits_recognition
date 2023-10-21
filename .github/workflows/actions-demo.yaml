@@ -24,5 +24,4 @@ jobs:
         run: echo "💡 The ${{ github.repository }} is updated and printing shapes."
       - name: Run test cases
         run:
-          python hyper_params_tuning.py
-          python dummy.py
+          python SVM_DecisionTree_train.py
