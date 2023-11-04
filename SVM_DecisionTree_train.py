@@ -4,6 +4,7 @@ from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score, confusion_matrix, f1_score
+import pickle
 
 # Load the MNIST dataset
 digits = datasets.load_digits()
@@ -66,5 +67,6 @@ f1_prod = f1_score(y_test, prod_predictions, average='macro')
 f1_cand = f1_score(y_test, cand_predictions, average='macro')
 print(f"Production model's macro-average F1 score: {f1_prod:.2f}")
 print(f"Candidate model's macro-average F1 score: {f1_cand:.2f}")
-
-
+with open("./saved_model/svm.pkl", "wb") as f:
+    pickle.dump(grid_search_svm, f)
+print("Saved Model Successfully")
