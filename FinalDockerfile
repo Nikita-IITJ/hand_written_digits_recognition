@@ -1,0 +1,8 @@
+# Use the Dependency Image as the base image
+FROM m22aie244.azurecr.io/dependencyimage:latest
+
+# Copy the application source code to the container
+COPY . /app/
+
+# Set the command to run pytest when the container starts
+CMD ["pytest"]

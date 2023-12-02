@@ -22,9 +22,11 @@ jobs:
         run:  pip3 install --no-cache-dir -r requirements.txt
       - name: run shape prints
         run: echo "💡 The ${{ github.repository }} is updated and printing shapes."
-      - name: permission
-        run: chmod +x docker_run.sh
+      # - name: permission
+      #   run: chmod +x docker_run.sh
       - name: Run test cases
-        run:
+        run: docker run finalimage
           # python SVM_DecisionTree_train.py
-          ./docker_run.sh
+      # - name: Test with pytest
+      #   run: |
+      #     pytest
