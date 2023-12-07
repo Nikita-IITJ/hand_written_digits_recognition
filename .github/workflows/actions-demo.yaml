@@ -27,4 +27,4 @@ jobs:
       - name: Run test cases
         run:
           # python SVM_DecisionTree_train.py
-          ./docker_run.sh
+          pytest
